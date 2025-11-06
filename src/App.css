@@ -1,0 +1,222 @@
+/* === RESET === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", "Segoe UI", Roboto, sans-serif;
+}
+
+/* === CONTAINER === */
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #000;
+  background: #fff;
+  overflow: hidden;
+  position: relative;
+  padding: 2rem;
+}
+
+/* === ANIMAÇÃO DE PARTÍCULAS === */
+.particles {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+  background-size: 50px 50px;
+  opacity: 0.2;
+  animation: moveGrid 15s linear infinite;
+  z-index: 0;
+}
+
+@keyframes moveGrid {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 50px 50px;
+  }
+}
+
+/* === TÍTULO === */
+h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #000;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1rem;
+  z-index: 1;
+  animation: glowPulse 3s ease-in-out infinite;
+}
+
+@keyframes glowPulse {
+  0%, 100% {
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+  50% {
+    text-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  }
+}
+
+/* === TEXTO PRINCIPAL === */
+p {
+  color: #333;
+  max-width: 600px;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  z-index: 1;
+}
+
+/* === CARD EXPLICAÇÃO === */
+.explanation {
+  background: rgba(0, 0, 0, 0.02);
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 16px;
+  padding: 1.5rem;
+  margin: 2rem 0;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  transition: 0.3s ease;
+  z-index: 1;
+  max-width: 700px;
+}
+
+.explanation:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.explanation a {
+  display: block;
+  color: #000;
+  font-weight: 600;
+  text-decoration: underline;
+  margin-top: 10px;
+}
+
+.explanation a:hover {
+  text-decoration: none;
+}
+
+/* === BOTÃO DE DOWNLOAD === */
+.download-btn {
+  background: #000;
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  border-radius: 50px;
+  padding: 0.9rem 2rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.download-btn:hover {
+  transform: scale(1.05);
+  background: #222;
+}
+
+/* === QR CODE === */
+.qr-container {
+  margin-top: 2rem;
+  background: #fff;
+  border-radius: 20px;
+  padding: 1rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+  color: #000;
+  z-index: 1;
+  display: inline-block;
+}
+
+/* === FOOTER === */
+footer {
+  position: fixed;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.8rem;
+  color: #555;
+  z-index: 1;
+}
+
+/* === RESPONSIVIDADE === */
+
+/* Tablets */
+@media (max-width: 1024px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  p {
+    max-width: 500px;
+    font-size: 0.95rem;
+  }
+
+  .download-btn {
+    padding: 0.8rem 1.8rem;
+  }
+}
+
+/* Celulares grandes */
+@media (max-width: 768px) {
+  #root {
+    padding: 1.5rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  .explanation {
+    margin: 1.5rem 0;
+    padding: 1rem;
+  }
+
+  .download-btn {
+    width: 80%;
+    justify-content: center;
+  }
+
+  .qr-container {
+    margin-top: 1.5rem;
+    padding: 0.8rem;
+  }
+
+  footer {
+    font-size: 0.75rem;
+  }
+}
+
+/* Celulares pequenos */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.7rem;
+  }
+
+  p {
+    font-size: 0.9rem;
+  }
+
+  .explanation {
+    font-size: 0.85rem;
+  }
+
+  .download-btn {
+    width: 100%;
+    font-size: 0.95rem;
+    padding: 0.8rem 1rem;
+  }
+
+  .qr-container {
+    padding: 0.6rem;
+    border-radius: 12px;
+  }
+}
